@@ -65,7 +65,7 @@
         </div>
         <div class="connexion">
             <a href="index.php">
-                <button id="connexion">Connecte-toi</button>
+                <button id="connexion">Connexion</button>
             </a>
         </div>
     </body>
