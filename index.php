@@ -11,8 +11,6 @@ if (session_status() == PHP_SESSION_NONE) {
     session_start();
 }
 
-if($_SESSION['connect']==false){
-  
     if(isset($_POST['log']) && isset($_POST['pass'])){
         $username = $_POST['log'];
         $password = $_POST['pass'];
@@ -39,6 +37,5 @@ if($_SESSION['connect']==false){
     }else{
         include('formulaire.php');
     }
-}
 
 ?>

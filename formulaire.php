@@ -37,7 +37,7 @@ if (session_status() == PHP_SESSION_NONE) {
                     }
                 ?>
                 <div class="login">
-                    <input type="text" id="login" name="log" placeholder="Votre login" autocomplete="off" autocapitalize="off" required></input>
+                    <input type="text" id="login" name="log" placeholder="Votre nom" autocomplete="off" autocapitalize="off" required></input>
                 </div>
                 <div class="password">
                     <input type="password" id="mdp" name="pass" placeholder="Votre mot de passe" autocomplete="off" autocapitalize="off" required></input>
