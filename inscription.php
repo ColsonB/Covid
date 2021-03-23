@@ -27,9 +27,6 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Inscription</title>
-        <link rel="icon" type="image/png" href="src/img/icone.png">
-        <link rel='stylesheet' type='text/css' href='src/css/page.css'>
-        <link rel='stylesheet' type='text/css' href='src/css/inscription.css'>
     </head>
 
     <body>
