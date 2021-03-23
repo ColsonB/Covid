@@ -13,7 +13,7 @@
                 $mdp = $_POST['mdp'];
                 $confmdp = $_POST['confmdp'];
 
-                $req = "INSERT INTO `user`(`id`, `nom`, `prenom`, `mdp`) VALUES ('$nom', '$prenom','$mdp')";
+                $req = "INSERT INTO `user`(`nom`, `prenom`, `mdp`) VALUES ('$nom', '$prenom','$mdp')";
                 $requetStatement=$BDD->query($req);
             }
         }
@@ -59,7 +59,7 @@
                     <input type="password" id="confmdp" name="confmdp" placeholder="Confirmer le mot de passe" required>
                 </div>
                 <div class="submit">
-                    <input type="submit" id="inscription" name="inscription" value="Creer le personnage">
+                    <input type="submit" id="inscription" name="inscription" value="Inscription">
                 </div>
             </form>
         </div>
