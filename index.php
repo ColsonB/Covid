@@ -22,7 +22,7 @@ if (session_status() == PHP_SESSION_NONE) {
             while($Tab=$RequetStatement->fetch()){
                 $id = $Tab[0];
             }
-            $_SESSION['idUser'] = $id;
+            $_SESSION['id'] = $id;
             $_SESSION['connect'] = true;
             include('accueil.php');
         }
