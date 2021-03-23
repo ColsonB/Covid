@@ -1,6 +1,6 @@
 <?php
 
-    include("BDD.php");
+    include("fonction.php");
 
 if (session_status() == PHP_SESSION_NONE) {
     session_start();

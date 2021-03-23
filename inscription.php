@@ -1,6 +1,6 @@
 <?php
 
-    include("BDD.php");
+    include("fonction.php");
 
     if(!empty($_POST)){
         extract($_POST);

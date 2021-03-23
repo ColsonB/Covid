@@ -1,5 +1,5 @@
 <?php
-    include("BDD.php");
+    include("fonction.php");
 ?>
 
 <?php
