@@ -1,36 +1,45 @@
-<?php
-
-    include("fonction.php");
-
-if (session_status() == PHP_SESSION_NONE) {
-    session_start();
-}
-
-    if(isset($_POST['log']) && isset($_POST['pass'])){
-        $username = $_POST['log'];
-        $password = $_POST['pass'];
-        
-        $req = "SELECT count(*) FROM user where 
-                nom = '".$username."' and mdp = '".$password."' ";
-        $RequetStatement=$BDD->query($req);
-        $count=$RequetStatement->fetchColumn();
-
-        $_SESSION['count'] = $count;
-        if($count!=0){
-            $req = "SELECT id FROM user where nom = '".$username."' and mdp = '".$password."' ";
-            $RequetStatement=$BDD->query($req);
-            while($Tab=$RequetStatement->fetch()){
-                $id = $Tab[0];
-            }
-            $_SESSION['id'] = $id;
-            $_SESSION['connect'] = true;
-            include('accueil.php');
-        }
-        else{
-            include('formulaire.php');
-        }
-    }else{
-        include('formulaire.php');
-    }
+<?php 
+session_start();
 
 ?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="src/css/style.css">
+    <script src="main.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    
+    <?php
+    //c'est dans fonction que l'on gère les formulaires de Co et les sessions
+    include "fonction.php"; 
+
+    if($access){
+        
+        echo "Welcome  ".$Joueur1->getPrenom();
+        
+        $Perso = new Personnage($mabase);
+        $Perso->getChoixPersonnage();
+        if(!$Perso->getId()==0){
+            $Joueur1->setPersonnage($Perso);
+        }
+        
+        if(!empty($Perso->getNom())){
+            echo '<a href="combat.php">Combattre avec  '.$Perso->getNom().'</a>';
+        }else{
+            echo '<a href="combat.php">Combattre avec  '.$Joueur1->getNomPersonnage().'</a>';
+        }
+        
+        
+
+
+    }else{
+        echo $errorMessage;
+    }
+    ?>
+</body>
+</html>
