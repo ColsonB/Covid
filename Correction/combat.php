@@ -3,7 +3,7 @@ session_start();
 
 ?>
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -14,12 +14,14 @@ session_start();
 </head>
 <body>
     
-    <?
+    <?php
     include "fonction.php"; 
 
     if($access){
         
-        echo "Bienvenue";
+        echo "Bienvenue".$Joueur1->getPrenom();
+        echo "Tu combat avec".$Joueur1->getNomPersonnage();
+        echo '<a href="index.php" >Retour menu</a>';
 
     }else{
         echo $errorMessage;
