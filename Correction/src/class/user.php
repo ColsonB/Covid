@@ -6,7 +6,9 @@ class User{
     private $_nom;
     private $_prenom;
     private $_mdp;
+    
     private $_bdd;
+    private $_MonPersonnage;
 
 
     public function __construct($bdd){
