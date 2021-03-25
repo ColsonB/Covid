@@ -1,6 +1,6 @@
 <?php 
 
-include "Class/user.php";
+include "src/class/user.php";
 
 //GESTION DE LA BASE -----------------------
 $mabase = null;
@@ -56,7 +56,7 @@ function afficheFormulaireLogout($mabase){
     ?>
         <form action="" method="post" >
             <div >
-                <input type="submit" value="Deco!" name="logout">
+                <input type="submit" value="Déconnexion" name="logout">
             </div>
         </form>
 
@@ -74,7 +74,7 @@ function afficheFormulaireConnexion($mabase){
     if( isset($_POST["login"]) && isset($_POST["password"])){
         //verif mdp en BDD
 
-        $Result = $mabase->query("SELECT * FROM `User` WHERE `login`='".$_POST['login']."' AND `mdp` = '".$_POST['password']."'");
+        $Result = $mabase->query("SELECT * FROM `user` WHERE `nom`='".$_POST['nom']."' AND `mdp` = '".$_POST['password']."'");
         if($tab = $Result->fetch()){ 
              //si mdp = ok
             $access = true;
