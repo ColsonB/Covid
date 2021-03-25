@@ -1,8 +1,12 @@
 <?php 
+
+include "Class/user.php";
+
 //GESTION DE LA BASE -----------------------
 $mabase = null;
 $access = null;
 $errorMessage="";
+
 try{
             $user = "bcolson_site";
             $pass = "TDataSource1234";
@@ -14,16 +18,18 @@ try{
     $errorMessage .= $e->getMessage();
 }
 
+$joueur1 = new User($mabase);
+
 //GESTION DES SESSION -----------------------
 if(!is_null($mabase)){
     if (isset($_SESSION["Connected"]) && $_SESSION["Connected"]===true){
         $access = true;
-        $access = afficheFormulaireLogout($mabase);
+        $access = $joueur1->DeconnecteToi();
     }else{
         $access = false;
         $errorMessage.= "Vous devez vous connectez";
         // Affichage de formulaire si pas deconnexion
-        $access = afficheFormulaireConnexion($mabase);
+        $access = $joueur1->ConnecteToi();
     }
    
 }else{
