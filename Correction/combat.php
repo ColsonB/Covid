@@ -19,8 +19,8 @@ session_start();
 
     if($access){
         
-        echo "Bienvenue".$Joueur1->getPrenom();
-        echo "Tu combat avec".$Joueur1->getNomPersonnage();
+        echo "Bienvenue  ".$Joueur1->getPrenom();?> <br> <?php
+        echo "Tu combat avec   ".$Joueur1->getNomPersonnage();?> <br> <?php
         echo '<a href="index.php" >Retour menu</a>';
 
     }else{

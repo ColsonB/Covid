@@ -20,7 +20,7 @@ session_start();
 
     if($access){
         
-        echo "BIENVENUE sur MON SITE ".$Joueur1->getPrenom();
+        echo "Welcome  ".$Joueur1->getPrenom();
         
         $Perso = new Personnage($mabase);
         $Perso->getChoixPersonnage();
@@ -29,9 +29,9 @@ session_start();
         }
         
         if(!empty($Perso->getNom())){
-            echo '<a href="combat.php">Combattre avec'.$Perso->getNom().'</a>';
+            echo '<a href="combat.php">Combattre avec  '.$Perso->getNom().'</a>';
         }else{
-            echo '<a href="combat.php">Combattre avec'.$Joueur1->getNomPersonnage().'</a>';
+            echo '<a href="combat.php">Combattre avec  '.$Joueur1->getNomPersonnage().'</a>';
         }
         
         
